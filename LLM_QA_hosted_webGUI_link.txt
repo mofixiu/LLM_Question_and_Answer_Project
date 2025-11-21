@@ -3,4 +3,3 @@ Matric number: 22CG031849
 Live URL: https://mofiyinllmqaproject.vercel.app
 GitHub repo: https://github.com/mofixiu/LLM_Question_and_Answer_Project
 
-Update the Live URL after deploying to Vercel and the GitHub repo link after uploading to GitHub.

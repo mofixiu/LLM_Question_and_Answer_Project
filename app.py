@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 import os
 import re
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 try:
     import google.generativeai as genai
