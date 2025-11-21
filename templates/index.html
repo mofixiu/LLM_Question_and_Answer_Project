@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LLM Q&A Web GUI</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>LLM Q&A Web GUI</h1>
+
+      <form method="post">
+        <label for="question">Enter your question</label>
+        <textarea id="question" name="question" rows="4" placeholder="Type a question...">{{ request.form.question or '' }}</textarea>
+        <button type="submit">Ask</button>
+      </form>
+
+      {% if processed %}
+      <div class="card">
+        <h2>Processed Question</h2>
+        <p>{{ processed }}</p>
+      </div>
+      <div class="card">
+        <h2>Prompt Sent</h2>
+        <pre>{{ prompt }}</pre>
+      </div>
+      <div class="card">
+        <h2>LLM Response</h2>
+        <pre>{{ response }}</pre>
+      </div>
+      <div class="card">
+        <h2>Final Answer</h2>
+        <p>{{ answer }}</p>
+      </div>
+      {% endif %}
+
+      <footer>
+        <p>Set `GEMINI_API_KEY` as an environment variable for real LLM responses.</p>
+        <p>Get your free API key at: <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
