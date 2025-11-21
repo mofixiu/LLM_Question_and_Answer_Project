@@ -42,7 +42,7 @@ def construct_prompt(processed_question: str) -> str:
     )
 
 
-def call_gemini(prompt: str, model: str = "gemini-pro") -> str:
+def call_gemini(prompt: str, model: str = "gemini-1.5-flash") -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return (
