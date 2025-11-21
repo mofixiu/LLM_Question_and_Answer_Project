@@ -28,7 +28,7 @@ def construct_prompt(processed_question: str) -> str:
     )
 
 
-def call_gemini(prompt: str, model: str = "gemini-1.5-flash") -> str:
+def call_gemini(prompt: str, model: str = "models/gemini-2.5-flash") -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return (
@@ -42,7 +42,7 @@ def call_gemini(prompt: str, model: str = "gemini-1.5-flash") -> str:
 
     try:
         genai.configure(api_key=api_key)
-        model_instance = genai.GenerativeModel(model)
+        model_instance = genai.GenerativeModel('models/gemini-2.5-flash')
         response = model_instance.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
